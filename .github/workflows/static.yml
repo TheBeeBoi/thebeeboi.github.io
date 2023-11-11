@@ -9,7 +9,6 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
@@ -22,12 +21,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        # This checks out your repository code.
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '14'
 
       - name: Install dependencies
         run: npm install
@@ -39,23 +37,10 @@ jobs:
         run: |
           git config --global user.email "actions@github.com"
           git config --global user.name "GitHub Actions"
-          
-          # Create an orphan branch named "pages" and switch to it
-          git checkout --orphan pages
-          
-          # Remove all files from the "pages" branch
-          git rm -rf .
-          
-          # Copy the built files from the "dist" folder to the root
-          cp -r dist/* .
-          
-          # Stage the changes
-          git add .
-          
-          # Commit the changes
+
+          git checkout -B pages
+          git add -f dist
           git commit -m "Deploy to GitHub Pages"
-          
-          # Push the changes to the "pages" branch
-          git push origin pages
+          git push -f origin pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
