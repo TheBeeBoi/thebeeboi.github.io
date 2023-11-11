@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
       - name: Install dependencies and build
         run: |
           npm install
@@ -39,10 +39,8 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           # Upload the entire folder
-          name: built_site
+          name: github-pages
           path: dist
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v3
-        with:
-          artifact_name: built_site
+        uses: actions/deploy-pages@v2
