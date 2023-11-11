@@ -11,6 +11,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   deploy:
@@ -19,13 +21,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          persist-credentials: false
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '14'
+          node-version: '20'
 
       - name: Install dependencies
         run: npm install
@@ -44,6 +44,9 @@ jobs:
 
           # Set up the remote URL with the token
           git remote add pages-remote https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/TheBeeBoi/thebeeboi.github.io.git
+
+          # Fetch and merge changes from the remote "pages" branch
+          git pull pages-remote pages
 
           # Push to the "pages" branch
           git push pages-remote pages
