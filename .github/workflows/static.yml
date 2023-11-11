@@ -3,7 +3,8 @@ name: Deploy static content to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
+    branches:
+      - main
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -14,47 +15,47 @@ permissions:
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
-  # Single deploy job since we're just deploying
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
+        # This checks out your repository code.
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '14'
+          node-version: '20'
+
       - name: Install dependencies
         run: npm install
+
       - name: Build
         run: npm run build
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-      - name: Upload artifact
-        uses: actions/upload-artifact@v2
-        with:
-          # Upload the build output folder
-          name: dist
-          path: ./dist
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          timeout: 600000
-          error_count: 10
-          reporting_interval: 5000
-          artifact_name: dist
-          preview: false
+
+      - name: Upload and commit to "pages" branch
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+          
+          # Create an orphan branch named "pages" and switch to it
+          git checkout --orphan pages
+          
+          # Remove all files from the "pages" branch
+          git rm -rf .
+          
+          # Copy the built files from the "dist" folder to the root
+          cp -r dist/* .
+          
+          # Stage the changes
+          git add .
+          
+          # Commit the changes
+          git commit -m "Deploy to GitHub Pages"
+          
+          # Push the changes to the "pages" branch
+          git push origin pages
         env:
-          GITHUB_PAGES: true
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
