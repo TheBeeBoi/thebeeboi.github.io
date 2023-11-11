@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b390e71-e6e6-4a1a-8d8e-a2612d80da46" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.eleventy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_includes/base.njk" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/index.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/posts/first.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/posts/posts.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.github/workflows/static.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/static.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,11 +16,25 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;TheBeeBoi&quot;
+  }
+}</component>
   <component name="GithubProjectSettings">
     <option name="branchProtectionPatterns">
       <list>
         <option value="main" />
       </list>
+    </option>
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="209cede6-cd40-4b33-bf23-1b2b4577643f" />
+        <option name="url" value="https://github.com/TheBeeBoi/TheBeeBoi.github.io.git" />
+      </UrlAndAccount>
     </option>
   </component>
   <component name="MarkdownSettingsMigration">
@@ -69,7 +74,8 @@
       <updated>1699674598309</updated>
       <workItem from="1699674601430" duration="3112000" />
       <workItem from="1699677846982" duration="511000" />
-      <workItem from="1699678400028" duration="301000" />
+      <workItem from="1699678400028" duration="735000" />
+      <workItem from="1699686919126" duration="106000" />
     </task>
     <task id="LOCAL-00001" summary="yay!">
       <option name="closed" value="true" />

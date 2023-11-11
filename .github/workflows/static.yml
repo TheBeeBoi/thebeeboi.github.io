@@ -38,9 +38,9 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          # Upload the dist folder
+          # Upload the entire folder
           name: dist
-          path: dist
+          path: .
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
