@@ -1,0 +1,22 @@
+{
+  "name": "thebeeboi.github.io",
+  "version": "0.0.1-alpha",
+  "description": "github pages stuff",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo 'idk how to test lol'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheBeeBoi/thebeeboi.github.io.git"
+  },
+  "author": "TheBeeBoi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TheBeeBoi/thebeeboi.github.io/issues"
+  },
+  "homepage": "https://github.com/TheBeeBoi/thebeeboi.github.io#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}
