@@ -39,10 +39,10 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           # Upload the entire folder
-          name: dist
-          path: .
+          name: built_site
+          path: dist
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
         with:
-          artifact_name: dist
+          artifact_name: built_site
