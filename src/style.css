@@ -1,0 +1,90 @@
+html {
+    -webkit-text-size-adjust: 100%;
+    padding-bottom: 4em
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1.5em;
+    max-width: 40em;
+    padding: 0 2%;
+    margin: auto;
+    transition: background-color 0.5s;
+    background-color: #eee; /* Light mode background color */
+    font-size: 18px;
+    color: #444;
+}
+
+.text-input {
+    width: 96%;
+    display: block;
+    padding: .5em 1%;
+    margin-bottom: 1.5em;
+    font-size: 1em
+}
+
+fieldset {
+    margin-bottom: 1.5em
+}
+
+textarea {
+    height: 10em
+}
+
+dt {
+    font-weight: bold
+}
+
+.important {
+    color: red
+}
+
+.footer {
+    text-align: right
+}
+
+.centered {
+    text-align: center
+}
+
+.nope {
+    display: none
+}
+
+.dark-mode {
+    background-color: #222426; /* Dark mode background color */
+    color: #ddd;
+}
+
+.header {
+    padding: 10px;
+}
+
+.dark-mode-button {
+    padding: 7px;
+    position: fixed;
+    top: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #333;
+    color: white;
+    transition: 200ms;
+}
+
+#dark-mode-button {
+    left: 10px;
+}
+
+.dark-mode-button:hover {
+    background: #444;
+}
+
+.dark-mode a {
+    color: #64B5F6; /* Link color in dark mode */
+}
+
+#goback {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
