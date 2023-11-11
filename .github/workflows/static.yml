@@ -44,7 +44,13 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           # Upload the build output folder
+          name: 'dist'
           path: './dist'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+        with:
+          artifact_name: dist
+          preview: false
+        env:
+          GITHUB_PAGES: true
