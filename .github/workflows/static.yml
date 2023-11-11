@@ -21,6 +21,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          persist-credentials: false
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -41,6 +43,11 @@ jobs:
           git checkout -B pages
           git add -f dist
           git commit -m "Deploy to GitHub Pages"
-          git push -f origin pages
+
+          # Set up the remote URL with the token
+          git remote add pages-remote https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/TheBeeBoi/thebeeboi.github.io.git
+
+          # Push to the "pages" branch
+          git push pages-remote pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
