@@ -14,15 +14,19 @@
 </head>
 <body>
 <button class="dark-mode-button" id="dark-mode-button" onclick="toggleDarkMode()">Toggle Dark Mode</button>
-<button id="goback" class="dark-mode-button" onclick="window.location.href = '/'">Go back</button>
+<button class="dark-mode-button" id="goback" onclick="toggleDarkMode()">Go back</button>
 
 <div class="header">
     <h1 class="centered">TheBeeBoi's site</h1>
     <h2 class="centered">{{ title }}</h2>
 </div>
-
 {{ content | safe }}
-
+<div class="footer">
+    <p>Made with 💖 using <a href="https://11ty.rocks">11ty</a></p>
+    <a class="rss" href="/rss.xml">RSS feed</a>
+    <a class="rss" href="/atom.xml">Atom feed</a>
+    <a class="rss" href="/feed.json">JSON feed</a>
+</div>
 <script src="/script.js"></script>
 </body>
 </html>

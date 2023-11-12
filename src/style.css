@@ -65,7 +65,7 @@ dt {
 .header, h1, h2, h3 {
     padding: 10px;
     font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial Unicode MS', Helvetica, sans-serif;
-    
+
 }
 
 .dark-mode-button {
@@ -117,3 +117,21 @@ code {
     margin-bottom: 10px;
 }
 
+.rss {
+    padding-top: 0;
+    margin-top: 0;
+    display: inline-block;
+    margin-right: 5px; /* Adjust the spacing between texts */
+    font-size: 14px;
+    margin-bottom: 1em;
+}
+
+.rss:not(:last-child):after {
+    content: '|';
+    margin-left: 10px; /* Adjust the spacing between the line and the next text */
+}
+
+.footer {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
