@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b390e71-e6e6-4a1a-8d8e-a2612d80da46" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/bees.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eleventy.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eleventy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/static.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/static.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_includes/base.njk" beforeDir="false" afterPath="$PROJECT_DIR$/src/_includes/base.njk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_includes/post.njk" beforeDir="false" afterPath="$PROJECT_DIR$/src/_includes/post.njk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/posts/first.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/posts/first.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +104,7 @@
       <workItem from="1699678400028" duration="735000" />
       <workItem from="1699686919126" duration="6509000" />
       <workItem from="1699711308359" duration="2644000" />
-      <workItem from="1699717587753" duration="5489000" />
+      <workItem from="1699717587753" duration="5855000" />
     </task>
     <task id="LOCAL-00001" summary="yay!">
       <option name="closed" value="true" />

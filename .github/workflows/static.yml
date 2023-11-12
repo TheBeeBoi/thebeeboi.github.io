@@ -32,6 +32,7 @@ jobs:
       - name: Install dependencies and build
         run: |
           npm install
+          rm -rf dist || true
           npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v3
