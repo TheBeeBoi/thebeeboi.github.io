@@ -132,6 +132,3 @@ dist
 # editors
 .vscode
 .idea
-
-# other folders
-dist
