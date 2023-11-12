@@ -7,16 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ title }}</title>
     <link rel="stylesheet" href="/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/extras/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/extras/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/extras/favicon-16x16.png">
+    <link rel="manifest" href="/extras/site.webmanifest">
 </head>
 <body>
 <button class="dark-mode-button" id="dark-mode-button" onclick="toggleDarkMode()">Toggle Dark Mode</button>
 
 <div class="header">
     <h1 class="centered">TheBeeBoi's site</h1>
-    <h2>{{ title }}</h2>
+    <h2 class="centered">{{ title }}</h2>
 </div>
 {{ content | safe }}
-
+<div class="footer">
+    Made with 💖 using <a href="https://11ty.rocks">11ty</a>
+</div>
 <script src="/script.js"></script>
 </body>
 </html>

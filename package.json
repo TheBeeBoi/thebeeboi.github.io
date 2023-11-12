@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo 'idk how to test lol'",
-    "start": "npm i && eleventy --serve",
+    "start": "eleventy --serve",
     "build": "npm i && eleventy"
   },
   "repository": {
