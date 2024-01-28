@@ -1,0 +1,78 @@
+# Simple workflow for deploying static content to GitHub Pages
+name: Deploy static content to Pages
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Single deploy job since we're just deploying
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '14'
+      - name: Install dependencies
+        run: npm install
+      - name: Build Markdown and Update HTML
+        run: |
+          for file in *.md; do
+            # Extract metadata from the Markdown file
+            title=$(grep "^title:" "$file" | cut -d ":" -f 2 | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+            date=$(grep "^date:" "$file" | cut -d ":" -f 2 | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+            content=$(awk '/^---/ {if (++n == 2) exit; next} n' "$file")
+
+            # Truncate content to 50 words
+            truncated_content=$(echo "$content" | awk '{for(i=1;i<=50;i++)printf $i" "; print "..."}')
+
+            # Generate HTML post content
+            post_html="<div class=\"post\">
+    <p>$date</p>
+    <a href=\"$file\"><h3>$title</h3></a>
+    <p>$truncated_content</p>
+</div>"
+
+            # File path of the HTML file
+            html_file="your_file_path.html"
+
+            # Find the line number where the "<h2>Posts</h2>" tag is located
+            line_number=$(grep -n "<h2>Posts</h2>" "$html_file" | cut -d ":" -f 1)
+
+            # Add the post HTML content after the line containing "<h2>Posts</h2>"
+            sed -i "${line_number}a ${post_html}" "$html_file"
+
+            echo "HTML content added for $file."
+          done
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          # Upload entire repository
+          path: '.'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
