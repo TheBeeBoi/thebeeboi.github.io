@@ -11,6 +11,10 @@ truncate_content() {
 
 # Loop through all Markdown files in the current directory
 for markdown_file in *.md; do
+    html_name=$(echo "$markdown_file" | sed 's/\.md$/.html/')
+
+    npx showdown makehtml -i $markdown_file -o $html_name
+
     if [ -f "$markdown_file" ]; then
         # Extract metadata from the Markdown file
         title=$(grep "^title:" "$markdown_file" | cut -d ":" -f 2 | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
@@ -23,7 +27,7 @@ for markdown_file in *.md; do
         # Generate HTML post content
         post_html="<div class=\"post\">
     <p>$date</p>
-    <a href=\"$markdown_file\"><h3>$title</h3></a>
+    <a href=\"$html_name\"><h3>$title</h3></a>
     <p>$truncated_content</p>
 </div>"
 
