@@ -1,0 +1,82 @@
+body {
+    max-width: 980px;
+    margin: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    background-color: #eee;
+    color: #222;
+    user-select: none;
+}
+
+.navbar {
+    max-height: 90px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    border-bottom: #999 solid 2px;
+}
+
+.logo {
+    font-family: 'Work Sans', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.left {
+    display: flex;
+}
+
+.bounce {
+    animation: bounce 0.5s ease-in-out 0s 1;
+}
+
+.right > a {
+    padding: 10px;
+    filter: blur(1px);
+    transition: filter ease-in-out 200ms;
+    text-decoration: none;
+    color: #222;
+}
+
+.right > a:hover {
+    filter: blur(0);
+}
+
+.darkmode-toggle {
+    color: #eee;
+}
+
+.darkmode-toggle--white {
+    color: #222;
+}
+
+.post {
+    padding: 0;
+    margin: 0;
+}
+
+.post > h3, .post > a {
+    line-height: 0;
+    color: #eee;
+    text-decoration: none;
+}
+
+@keyframes bounce {
+    10% { transform: scale(0.9); }
+    30% { transform: scale(1.1); }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #eee;
+    }
+
+    .right > a {
+        color: #eee;
+    }
+}
