@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 #couch {
-    transition: filter 0.3s ease;
+    transition: 0.3s ease-in-out;
+    transition-property: all;
 }
 
 .logo-gradient {
