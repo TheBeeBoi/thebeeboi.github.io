@@ -6,13 +6,27 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TailwindCSS test</title>
+    <style>
+        body {
+            transition: background-color 0.3s ease;
+            background: #eee;
+            color: #121212;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: #121212;
+                color: #eee;
+            }
+        }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 </head>
 
-<body class="dark:text-white dark:bg-[#121212]">
+<body>
     <div id="root"
         class="flex sm:flex max-w-[300px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[980px] xl:max-w-[1200px] mx-auto">
     </div>
