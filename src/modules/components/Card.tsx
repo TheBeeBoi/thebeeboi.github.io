@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 interface CardProps {
     title: string;
     description: string;
@@ -7,7 +9,7 @@ interface CardProps {
 
 function Card({ title, description, tags, link }: CardProps) {
     return (
-        <a className="overflow-hidden max-w-sm rounded shadow-xl dark:bg-[#212121] m-4" href={'/posts/' + link}>
+        <Link className="overflow-hidden max-w-sm rounded shadow-xl dark:bg-[#212121] m-4" to={'/posts/' + link}>
             <div className="px-6 py-4">
                 <h2 className="mb-2 text-xl font-bold">{title}</h2>
                 <p className="text-base">{description}</p>
@@ -22,7 +24,7 @@ function Card({ title, description, tags, link }: CardProps) {
                     </span>
                 ))}
             </div>
-        </a>
+        </Link>
     );
 };
 
