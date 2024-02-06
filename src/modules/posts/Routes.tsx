@@ -2,7 +2,6 @@ import { Route, Routes as ReactRoutes, BrowserRouter } from "react-router-dom"
 import Archives from "../Archives";
 import Post1 from "./post1.mdx";
 import Post2 from "./post2.mdx";
-import Navbar from "../components/Navbar";
 import Home from "../Home";
 import NoMatch from "../NoMatch";
 
