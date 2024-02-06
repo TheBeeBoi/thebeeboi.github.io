@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    transition: 0.3s ease-in-out;
+    transition-property: background-color;
+    background-color: #121212;
+    color: #eeeeee;
+}
+
 #couch {
     transition: 0.3s ease-in-out;
     transition-property: all;
@@ -9,4 +16,15 @@
 
 .logo-gradient {
     @apply text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-700 dark:from-slate-300 dark:to-slate-500;
+}
+
+.card . {
+    transition: all 0.3s ease-in-out;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        color: white;
+        background-color: #121212;
+    }
 }

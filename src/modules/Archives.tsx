@@ -7,26 +7,27 @@ interface Post {
     description: string;
     tags: string[];
     link: string;
-    id: number;
 }
 
 function Archives() {
-    function generateCards(data : Post[]) {
-        return data.map((post : Post) => (
-            <Card
-                key={post.id}
-                title={post.title}
-                description={post.description}
-                tags={post.tags}
-                link={post.link}
-            />
+    function generateCards(data: Post[]) {
+        return data.map((post: Post, index) => (
+            <div key={index} className="select-none">
+                <Card
+                    key={index}
+                    title={post.title}
+                    description={post.description}
+                    tags={post.tags}
+                    link={post.link}
+                />
+            </div>
         ));
     };
 
     return (
         <div className="w-full">
             <Navbar />
-            <div className="flex mt-6">
+            <div className="block mt-6">
                 {generateCards(posts)}
             </div>
         </div>

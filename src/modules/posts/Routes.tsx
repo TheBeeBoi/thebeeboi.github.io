@@ -8,29 +8,16 @@ import NoMatch from "../NoMatch";
 
 function Routes() {
     return (
-        <div className="w-full">
+        <div className="w-full min-h-[calc(100dvh-120px)]">
             <BrowserRouter>
                 <ReactRoutes>
                     <Route index element={<Home />} />
                     <Route path="posts">
                         <Route path="post1" element={
-                            <div className="w-full">
-                                <Navbar />
-                                <div className="block pt-6">
-                                    <div className="prose dark:prose-invert">
-                                        <Post1 />
-                                    </div>
-                                </div>
-                            </div>} />
+                            <Post1 />
+                        } />
                         <Route path="post2" element={
-                            <div className="w-full">
-                                <Navbar />
-                                <div className="block pt-6">
-                                    <div className="prose dark:prose-invert">
-                                        <Post2 />
-                                    </div>
-                                </div>
-                            </div>
+                            <Post2 />
                         } />
                         <Route index element={<Archives />} />
                     </Route>
